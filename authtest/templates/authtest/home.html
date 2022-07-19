@@ -1,0 +1,28 @@
+{% load static %}
+<html lang="ja">
+    <head>
+      <meta charset="UTF-8">
+      <title>ホーム</title>
+      <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    </head>
+    <body>
+    <h1><img width="24px" src="https://1.bp.blogspot.com/-SV46nisYM3o/XobTKL4wt_I/AAAAAAABYFY/sRiM-vjUesA09XAOY5W4vqYXCBNbqTrBACNcBGAsYHQ/s1600/game_reversi_white.png" alt="画像" class="sample2"> オンラインオセロ
+    <img width="24px" src="https://1.bp.blogspot.com/-G9OZHmfgKFA/XobTJbrXJBI/AAAAAAABYFQ/4ab3VMkq0cIPUlp85C51VRfj3-ZBPeQ-QCNcBGAsYHQ/s1600/game_reversi_black.png" alt="画像" class="sample3">
+    </h1>
+
+      {% if user.is_authenticated %}
+      <h2>id: {{ user.username }}でログイン中</h2>
+      <p><a href="{% url 'priv' %}">プライベート</a></p>
+      <p><a href="{% url 'pub' %}">ゲーム開始</a></p>
+      <a href="{% url 'logout' %}">ログアウト</a>
+      {% else %}
+      <p>ログインして下さい</p>
+      <p><a href="{% url 'login' %}">ログイン</a></p>
+      <p><a href = "{%url 'signup' %}">アカウント作成</a></p>
+      {% endif %}
+
+      <hr>
+      
+      
+    </body>
+</html>

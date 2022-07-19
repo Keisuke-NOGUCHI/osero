@@ -1,0 +1,23 @@
+{% load static %}
+<html lang="ja">
+  <head>
+    <title>ログイン</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1><img width="24px" src="https://1.bp.blogspot.com/-SV46nisYM3o/XobTKL4wt_I/AAAAAAABYFY/sRiM-vjUesA09XAOY5W4vqYXCBNbqTrBACNcBGAsYHQ/s1600/game_reversi_white.png" alt="画像" class="sample2"> オンラインオセロ
+      <img width="24px" src="https://1.bp.blogspot.com/-G9OZHmfgKFA/XobTJbrXJBI/AAAAAAABYFQ/4ab3VMkq0cIPUlp85C51VRfj3-ZBPeQ-QCNcBGAsYHQ/s1600/game_reversi_black.png" alt="画像" class="sample3">
+  </h1>
+{% if form.errors %}
+<p>ユーザー名、もしくはパスワードが違います</p>
+{% endif %}
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input id="login" type="submit" value="ログイン" />
+    </form>
+
+    <p><a href="{% url 'home' %}">ホームに戻る</a></p>
+  </body>
+</html>

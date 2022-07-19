@@ -1,0 +1,55 @@
+h1 {
+    font-family : sans-serif;
+    font-size : 24px;
+    padding : 20px;
+    color : white;
+    background-color : green;
+    text-shadow : white solid 4px;
+    text-align: center;
+    margin-top: 0; margin-bottom: 0;
+}
+
+h2 {
+    font-family : sans-serif;
+    font-size : 15px;
+    padding : 10px;
+    color : white;
+    background-color : green;
+    text-shadow : white solid 4px;
+    text-align: right;
+    margin-top: 0; margin-bottom: 0;
+}
+
+h3 {
+    font-family : sans-serif;
+    font-size : 18px;
+    padding : 5px;
+    color : white;
+    background-color : green;
+    text-shadow : white solid 4px;
+}
+
+p {
+    font-family : sans-serif;
+    background-color : #cccccc;
+    font-size : 18px;
+    margin : 0px;
+}
+
+#button {
+    font-family : sans-serif;
+    background-color : #cccccc;
+    font-size : 18px;
+    margin : 5px;
+    margin-left : 0;
+}
+
+.sample2{
+    position:relative;
+    top:3px;
+}
+
+.sample3{
+    position:relative;
+    top:3px;
+}

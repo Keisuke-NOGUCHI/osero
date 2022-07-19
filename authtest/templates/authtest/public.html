@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<meta http-equiv="content-type" charset="utf-8">
+<html>
+<head>
+    <title>JavaScriptでオセロゲームを作る</title>
+    <link rel="stylesheet" href="{% static 'css/public.css' %}">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1><img width="24px" src="https://1.bp.blogspot.com/-SV46nisYM3o/XobTKL4wt_I/AAAAAAABYFY/sRiM-vjUesA09XAOY5W4vqYXCBNbqTrBACNcBGAsYHQ/s1600/game_reversi_white.png" alt="画像" class="sample2"> オンラインオセロ
+        <img width="24px" src="https://1.bp.blogspot.com/-G9OZHmfgKFA/XobTJbrXJBI/AAAAAAABYFQ/4ab3VMkq0cIPUlp85C51VRfj3-ZBPeQ-QCNcBGAsYHQ/s1600/game_reversi_black.png" alt="画像" class="sample3">
+    </h1>
+        {% if user.is_authenticated %}
+        <h2>id: {{ user.get_username }} でログイン中</h2>
+        {% else %}
+        <h2>ログインしていません</h2>
+        {% endif %}
+    
+    <!- 盤面 ->
+    <table id="field"></table>
+    <!- ターンの表示 ->
+    <p id="view_tarn"></p>
+    <!- 初期化ボタン ->
+    <button type="button" id="ban_init" onclick="ban_init()">やり直し</button>
+    <p><a href="{% url 'home' %}">ホームに戻る</a></p>
+</body>
+<script src="{% static 'js/public.js' %}"></script>
+</html>
